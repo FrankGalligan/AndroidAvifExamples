@@ -32,10 +32,10 @@ machine.*
 ```
 cd ext
 git clone -b v3.1.2 --depth 1 https://aomedia.googlesource.com/aom
-$ cd aom && mkdir build.libavif && cd build.libavif
-$ cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_DOCS=0 -DENABLE_EXAMPLES=0 -DENABLE_TESTDATA=0 -DENABLE_TESTS=0 -DENABLE_TOOLS=0 -DBUILD_SHARED_LIBS=0 -DCMAKE_TOOLCHAIN_FILE=../build/cmake/toolchains/arm64-android-clang.cmake -DAOM_ANDROID_NDK_PATH=$ANDROID_NDK ..
-$ ninja
-$ cd ../../../
+cd aom && mkdir build.libavif && cd build.libavif
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_DOCS=0 -DENABLE_EXAMPLES=0 -DENABLE_TESTDATA=0 -DENABLE_TESTS=0 -DENABLE_TOOLS=0 -DBUILD_SHARED_LIBS=0 -DCMAKE_TOOLCHAIN_FILE=../build/cmake/toolchains/arm64-android-clang.cmake -DAOM_ANDROID_NDK_PATH=$ANDROID_NDK ..
+ninja
+cd ../../../
 ```
 
 *Note: **v3.1.2** was pulled from
@@ -86,4 +86,16 @@ cd ../../../
 should chack that file to see if libavif is using a more recent version of
 libyuv.*
 
+### Build libavif Android Shared Library
+
+```
+mkdir build_android_arm64-v8a_so && cd build_android_arm64-v8a_so
+cmake -DCMAKE_BUILD_TYPE=Release -DAVIF_LOCAL_AOM=1 -DAVIF_CODEC_AOM=1 -DAVIF_LOCAL_DAV1D=1 -DAVIF_CODEC_DAV1D=1 -DAVIF_LOCAL_LIBYUV=1 -DBUILD_SHARED_LIBS=1 -DAVIF_BUILD_APPS=0 -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23 ../
+make
+cd ../
+```
+
+At this point you should have a file named libavif.so in your
+build_android_arm64-v8a_so directory. This is the shared library that will be
+called from the Android Studio project.
 
