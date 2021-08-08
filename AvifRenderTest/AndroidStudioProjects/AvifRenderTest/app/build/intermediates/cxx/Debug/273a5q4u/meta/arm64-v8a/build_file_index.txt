@@ -1,1 +1,0 @@
-/usr/local/google/home/fgalligan/src/github/FrankGalligan/AndroidAvifExamples/AvifRenderTest/AndroidStudioProjects/AvifRenderTest/app/src/main/cpp/CMakeLists.txt
