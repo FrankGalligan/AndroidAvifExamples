@@ -1,0 +1,1 @@
+/usr/local/google/home/fgalligan/src/github/FrankGalligan/AndroidAvifExamples/AvifRenderTest/AndroidStudioProjects/AvifRenderTest/app/build/intermediates/cxx/Debug/273a5q4u/obj/arm64-v8a
