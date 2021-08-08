@@ -231,3 +231,9 @@ splits {
 }
 ```
 
+## Example Android Studio Project
+An almost finished Android Studio project based on this tutorial is located
+[here](AndroidStudioProjects/BasicLibavifAndroid/). See the
+[README](AndroidStudioProjects/BasicLibavifAndroid/README.md) for more
+information.
+
