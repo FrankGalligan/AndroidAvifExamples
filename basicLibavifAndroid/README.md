@@ -1,6 +1,6 @@
 # Basic libavif on Android
-This tutorial shows how to build libavif so that you can call into libavif
-from a very basic Android Studio project.
+This tutorial shows how to build a very basic Android Studio project that calls
+into a native libavif shared library.
 
 ## Prequesties
 
