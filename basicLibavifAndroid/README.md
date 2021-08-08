@@ -88,6 +88,7 @@ cd ../../..
 [libgav1.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/libgav1.cmd). You
 should check that file to see if libavif is using a more recent version of
 libgav1.*
+
 *Note: **lts_2021_03_24** was pulled from
 [libgav1.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/libgav1.cmd). You
 should check that file to see if libavif is using a more recent version of
