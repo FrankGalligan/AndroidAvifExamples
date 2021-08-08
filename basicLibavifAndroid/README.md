@@ -140,27 +140,24 @@ project.*
 ```
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_avifexamples_basiclibavifandroid_MainActivity_avifVersionString(
-       JNIEnv* env,
-       jobject /* this */) {
-   const char * str_ver = avifVersion();
-   std::string hello = "AVIF version: ";
-   char temp[256];
-   sprintf(temp, "%s", str_ver);
-   hello += temp;
-   hello += " C: ";
+        JNIEnv* env,
+        jobject /* this */) {
+    const char* const str_version = avifVersion();
+    char codec_versions[256];
+    avifCodecVersions(codec_versions);
+    const uint32_t libyuv_version = avifLibYUVVersion();
 
-   char codecVersions[256];
-   avifCodecVersions(codecVersions);
-   hello += codecVersions;
-
-   return env->NewStringUTF(hello.c_str());
+    char temp[512];
+    sprintf(temp, "AVIF: %s\nCodces: %s\nlibyuv: %d",
+            str_version,codec_versions, libyuv_version);
+    return env->NewStringUTF(temp);
 }
 ```
 
 3. In CMakeLists.txt
 
 Add the code below. Right after make_minimum_required() should be fine.
-*Note: You will need to replace $GITHUB_DIRECTORY with the path to where you
+*Note: You will need to replace **GITHUB_DIRECTORY** with the path to where you
 cloned libavif.*
 
 ```
