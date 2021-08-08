@@ -1,6 +1,6 @@
 # AvifRenderTest
 
-This example application will decode an render, as fast as possible, all
+This example application will decode and render, as fast as possible, all
 AVIF images in a chosen directory. The application lets you choose different
 decoders and settings to see the affect it has on decode performance.
 
