@@ -1,0 +1,42 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/local/google/home/fgalligan/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/local/google/home/fgalligan/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "avifrendertest-Debug-x86_64": {
+      "buildCommandComponents": [
+        "/usr/local/google/home/fgalligan/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/x86_64",
+        "avifrendertest"
+      ],
+      "buildType": "debug",
+      "abi": "x86_64",
+      "artifactName": "avifrendertest",
+      "output": "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/build/intermediates/cxx/Debug/5v3x6y69/obj/x86_64/libavifrendertest.so",
+      "runtimeFiles": [
+        "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/x86_64/libs/arm64-v8a/libavif.so"
+      ]
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,2 @@
+ninja: Entering directory `/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/x86'
+ninja: no work to do.

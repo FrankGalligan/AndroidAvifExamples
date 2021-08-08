@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/arm64-v8a",
+  "command": "/usr/local/google/home/fgalligan/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/usr/local/google/home/fgalligan/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/usr/local/google/home/fgalligan/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dlibavif_jni_EXPORTS -I/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/include -I/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/ext/libyuv/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/libavif_jni.dir/libavif_jni.cpp.o -c /usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/src/main/cpp/libavif_jni.cpp",
+  "file": "/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/src/main/cpp/libavif_jni.cpp"
+}
+]

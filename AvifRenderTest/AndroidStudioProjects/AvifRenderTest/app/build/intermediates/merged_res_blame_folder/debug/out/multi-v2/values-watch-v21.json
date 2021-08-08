@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/usr/local/google/home/fgalligan/src/github/FrankGalligan/AndroidAvifExamples/AvifRenderTest/AndroidStudioProjects/AvifRenderTest/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/usr/local/google/home/fgalligan/.gradle/caches/transforms-3/4f7fde6443b19e6ece3941e32d79f216/transformed/appcompat-1.2.0/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

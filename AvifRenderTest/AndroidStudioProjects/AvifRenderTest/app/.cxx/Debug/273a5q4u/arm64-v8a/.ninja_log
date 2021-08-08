@@ -1,0 +1,6 @@
+# ninja log v5
+0	26	1628450219	build.ninja	5a6c4883b115efae
+0	4	0	clean	ce340a3b78bef7f8
+0	24	1628450233	build.ninja	5a6c4883b115efae
+0	632	1628450234	CMakeFiles/libavif_jni.dir/libavif_jni.cpp.o	beeb4acd2a1c1c67
+633	676	1628450234	/usr/local/google/home/fgalligan/src/github/FrankGalligan/AndroidAvifExamples/AvifRenderTest/AndroidStudioProjects/AvifRenderTest/app/build/intermediates/cxx/Debug/273a5q4u/obj/arm64-v8a/liblibavif_jni.so	9d28473de46faf5c
