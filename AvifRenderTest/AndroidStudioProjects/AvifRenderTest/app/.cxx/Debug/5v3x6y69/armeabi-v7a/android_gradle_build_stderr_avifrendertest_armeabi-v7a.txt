@@ -1,1 +1,0 @@
-ninja: error: 'libs/arm64-v8a/libavif.so', needed by '/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/build/intermediates/cxx/Debug/5v3x6y69/obj/armeabi-v7a/libavifrendertest.so', missing and no known rule to make it

@@ -1,3 +1,0 @@
-/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/arm64-v8a/CMakeFiles/rebuild_cache.dir
-/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/arm64-v8a/CMakeFiles/edit_cache.dir
-/usr/local/google/home/fgalligan/AndroidStudioProjects/AvifRenderTest/app/.cxx/Debug/5v3x6y69/arm64-v8a/CMakeFiles/libavif_jni.dir
