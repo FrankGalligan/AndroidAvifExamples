@@ -34,14 +34,14 @@ machine.*
 
 ```
 cd ext
-git clone -b v3.1.2 --depth 1 https://aomedia.googlesource.com/aom
+git clone -b v3.12.1 --depth 1 https://aomedia.googlesource.com/aom
 cd aom && mkdir build.libavif && cd build.libavif
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_DOCS=0 -DENABLE_EXAMPLES=0 -DENABLE_TESTDATA=0 -DENABLE_TESTS=0 -DENABLE_TOOLS=0 -DBUILD_SHARED_LIBS=0 -DCMAKE_TOOLCHAIN_FILE=../build/cmake/toolchains/arm64-android-clang.cmake -DAOM_ANDROID_NDK_PATH=$ANDROID_NDK ..
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_DOCS=0 -DENABLE_EXAMPLES=0 -DENABLE_TESTDATA=0 -DENABLE_TESTS=0 -DENABLE_TOOLS=0 -DBUILD_SHARED_LIBS=0 -DCMAKE_TOOLCHAIN_FILE=../build/cmake/toolchains/android.cmake -DAOM_ANDROID_NDK_PATH=$ANDROID_NDK ..
 ninja
 cd ../../../
 ```
 
-*Note: **v3.1.2** was pulled from
+*Note: **v3.12.1** was pulled from
 [aom.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/aom.cmd). You
 should check that file to see if libavif is using a more recent version of
 libaom.*
@@ -59,14 +59,16 @@ building dav1d for the desktop.
 
 ```
 cd ext
-git clone -b 0.9.1 --depth 1 https://code.videolan.org/videolan/dav1d.git
+git clone -b 1.5.1 --depth 1 https://code.videolan.org/videolan/dav1d.git
 cd dav1d && mkdir build  && cd build
-meson setup --cross-file '../package/crossfiles/aarch64-android.meson' --default-library=static --buildtype release ..
-ninja
+meson setup --cross-file '../package/crossfiles/aarch64-android.meson'
+--default-library=static --buildtype release -Denable_tools=false
+-Denable_tests=false ..
+meson compile -C ./
 cd ../../../
 ```
 
-*Note: **v0.9.1** was pulled from
+*Note: **v1.5.1** was pulled from
 [dav1d.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/dav1d.cmd). You
 should check that file to see if libavif is using a more recent version of
 dav1d.*
@@ -103,14 +105,14 @@ abseil.*
 cd ext
 git clone --single-branch https://chromium.googlesource.com/libyuv/libyuv
 cd libyuv
-git checkout 2f0cbb9
+git checkout ce488afb7
 mkdir build && cd build
 cmake -DBUILD_SHARED_LIBS=0 -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23  -DANDROID_ARM_NEON=TRUE ../
 make
 cd ../../../
 ```
 
-*Note: **2f0cbb9** was pulled from
+*Note: **ce488afb7** was pulled from
 [libyuv.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/libyuv.cmd). You
 should check that file to see if libavif is using a more recent version of
 libyuv.*
@@ -119,7 +121,7 @@ libyuv.*
 
 ```
 mkdir build_android_arm64-v8a_so && cd build_android_arm64-v8a_so
-cmake -DCMAKE_BUILD_TYPE=Release -DAVIF_LOCAL_AOM=1 -DAVIF_CODEC_AOM=1 -DAVIF_LOCAL_DAV1D=1 -DAVIF_CODEC_DAV1D=1 -DAVIF_LOCAL_LIBGAV1=1 -DAVIF_CODEC_LIBGAV1=1 -DAVIF_LOCAL_LIBYUV=1 -DBUILD_SHARED_LIBS=1 -DAVIF_BUILD_APPS=0 -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23 ../
+cmake -DCMAKE_BUILD_TYPE=Release -DAVIF_CODEC_AOM=LOCAL -DAVIF_CODEC_DAV1D=LOCAL -DAVIF_LIBYUV=LOCAL -DBUILD_SHARED_LIBS=ON -DAVIF_BUILD_APPS=OFF -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23 ../
 make
 cd ../
 ```
