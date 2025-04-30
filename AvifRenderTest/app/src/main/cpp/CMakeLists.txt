@@ -6,9 +6,9 @@
 cmake_minimum_required(VERSION 3.10.2)
 
 add_library( avif SHARED IMPORTED )
-set_target_properties(avif PROPERTIES IMPORTED_LOCATION /usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/build_android_arm64-v8a_so/libavif.so )
-include_directories(/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/include)
-include_directories(/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/ext/libyuv/include)
+set_target_properties(avif PROPERTIES IMPORTED_LOCATION $GITHUB_DIRECTORY/libavif/build_android_arm64-v8a_so/libavif.so )
+include_directories($GITHUB_DIRECTORY/libavif/include)
+include_directories($GITHUB_DIRECTORY/libavif/ext/libyuv/include)
 
 # Declares and names the project.
 
