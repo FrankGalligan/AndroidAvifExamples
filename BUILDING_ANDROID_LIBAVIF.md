@@ -41,7 +41,7 @@ ninja
 cd ../../../
 ```
 
-*Note: **v3.1.2** was pulled from
+*Note: **v3.12.1** was pulled from
 [aom.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/aom.cmd). You
 should check that file to see if libavif is using a more recent version of
 libaom.*
@@ -68,7 +68,7 @@ meson compile -C ./
 cd ../../../
 ```
 
-*Note: **v0.9.1** was pulled from
+*Note: **v1.5.1** was pulled from
 [dav1d.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/dav1d.cmd). You
 should check that file to see if libavif is using a more recent version of
 dav1d.*
