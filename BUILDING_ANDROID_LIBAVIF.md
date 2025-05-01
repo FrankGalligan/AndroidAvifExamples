@@ -81,23 +81,19 @@ building ligav1 for the desktop.
 
 ```
 cd ext
-git clone -b v0.16.3 --depth 1 https://chromium.googlesource.com/codecs/libgav1
-cd libgav1
-git clone -b lts_2021_03_24 --depth 1 https://github.com/abseil/abseil-cpp.git third_party/abseil-cpp
-mkdir build && cd build
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DLIBGAV1_THREADPOOL_USE_STD_MUTEX=1 -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchains/android.cmake -DLIBGAV1_ANDROID_NDK_PATH=$ANDROID_NDK ..
-ninja
-cd ../../..
+git clone -b v0.19.0 --depth 1 https://chromium.googlesource.com/codecs/libgav1
+cmake -G Ninja -S libgav1 -B libgav1/build -DCMAKE_BUILD_TYPE=Release -DLIBGAV1_THREADPOOL_USE_STD_MUTEX=1 -DCMAKE_TOOLCHAIN_FILE=${YOUR_LIBAVIF_PATH}/ext/libgav1/cmake/toolchains/android.cmake -DLIBGAV1_ANDROID_NDK_PATH=$ANDROID_NDK -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DLIBGAV1_ENABLE_EXAMPLES=0 -DLIBGAV1_ENABLE_TESTS=0 -DLIBGAV1_MAX_BITDEPTH=12
+cmake --build libgav1/build --config Release --parallel
+cd ..
 ```
-*Note: **v0.16.3** was pulled from
+
+*Note: You need to change ${YOUR_LIBAVIF_PATH} to the absolute path of your
+libavif chevkout.
+
+*Note: **v0.19.0** was pulled from
 [libgav1.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/libgav1.cmd). You
 should check that file to see if libavif is using a more recent version of
 libgav1.*
-
-*Note: **lts_2021_03_24** was pulled from
-[libgav1.cmd](https://github.com/AOMediaCodec/libavif/blob/master/ext/libgav1.cmd). You
-should check that file to see if libavif is using a more recent version of
-abseil.*
 
 ### Build libyuv
 
@@ -121,7 +117,7 @@ libyuv.*
 
 ```
 mkdir build_android_arm64-v8a_so && cd build_android_arm64-v8a_so
-cmake -DCMAKE_BUILD_TYPE=Release -DAVIF_CODEC_AOM=LOCAL -DAVIF_CODEC_DAV1D=LOCAL -DAVIF_LIBYUV=LOCAL -DBUILD_SHARED_LIBS=ON -DAVIF_BUILD_APPS=OFF -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23 ../
+cmake -DCMAKE_BUILD_TYPE=Release -DAVIF_CODEC_AOM=LOCAL -DAVIF_CODEC_DAV1D=LOCAL -DAVIF_CODEC_LIBGAV1=LOCAL -DAVIF_LIBYUV=LOCAL -DBUILD_SHARED_LIBS=ON -DAVIF_BUILD_APPS=OFF -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_ARM_MODE=ON -DANDROID_NDK=$ANDROID_NDK -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=23 ../
 make
 cd ../
 ```
