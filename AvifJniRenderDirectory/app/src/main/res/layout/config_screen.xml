@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="" />
+    <ListView
+        android:id="@+id/imageList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30" ></ListView>
+    <TextView
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="35">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decoderDav1d"
+            android:checked="true"
+            android:text="DAV1D" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decoderAom"
+            android:text="AOM" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decoderGav1"
+            android:text="GAV1" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decoderPlatformAvif"
+            android:text="PLATFORM AVIF (if available)" />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:weightSum="100">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Threads: " />
+            <EditText
+                android:id="@+id/threadCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:text="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Loops: " />
+            <EditText
+                android:id="@+id/loopCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minHeight="48dp"
+                android:inputType="number"
+                android:text="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Sleep b/w loops: " />
+            <EditText
+                android:id="@+id/sleepSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:text="0" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/buttonStart"
+        android:text="DECODE AND PAINT" />
+</LinearLayout>
