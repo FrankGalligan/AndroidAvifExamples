@@ -37,10 +37,10 @@ add_library(avifdecoderjni SHARED native-avif-decoder.cpp) # "avifdecoderjni" is
 # you should copy the 'avif' header directory into your cpp folder (e.g., cpp/include/avif)
 # and use: target_include_directories(avifdecoderjni PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_include_directories(avifdecoderjni PRIVATE
-        "/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/include"
+        "$GITHUB_DIRECTORY/include"
 )
 target_include_directories(avifdecoderjni PRIVATE
-        "/usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/ext/libyuv/include"
+        "$GITHUB_DIRECTORY/ext/libyuv/include"
 )
 
 # Define the imported target for the pre-built libavif.so
@@ -48,7 +48,7 @@ target_include_directories(avifdecoderjni PRIVATE
 add_library(libavif SHARED IMPORTED)
 #set_target_properties(libavif PROPERTIES IMPORTED_LOCATION
 #    "${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libavif.so")
-set_target_properties(libavif PROPERTIES IMPORTED_LOCATION /usr/local/google/home/fgalligan/src/github/FrankGalligan/libavif/build_android_arm64-v8a_so/libavif.so )
+set_target_properties(libavif PROPERTIES IMPORTED_LOCATION $GITHUB_DIRECTORY/build_android_arm64-v8a_so/libavif.so )
 
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
